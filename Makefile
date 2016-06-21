@@ -16,7 +16,7 @@ OBJ = $(SRC_PATH)main.o $(SRC_PATH)ray_casting.o
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): qme
 	@echo "\nCrystal is preparing to compile Wolf3D..."
 	@$(CC) $(C_FLAGS) -c $(SRC) -I $(INCL)
 	@echo "Crystal has successfully created all your object files..."
@@ -38,3 +38,10 @@ re: fclean all
 
 norme: 
 	@norminette $(SRC)
+
+me: qme
+	cat -e author
+
+qme:
+	@rm -Rf author
+	@whoami > author
